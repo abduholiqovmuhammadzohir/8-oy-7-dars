@@ -1,14 +1,22 @@
 import React from 'react'
 import LeftSidebar from '../components/LeftSidebar'
 import RightSidebar from '../components/RightSidebar'
+import styled from '@emotion/styled'
 
-function Layout({children}) {
+function Layout({ children }) {
+
+  const LayoutWrapper = styled.div`
+     display:flex;
+     width: 100%;
+     justify-content: space-between;
+  `;
+
   return (
-    <div>
-        <LeftSidebar></LeftSidebar>
-        {children}
-        <RightSidebar></RightSidebar>
-    </div>
+    <LayoutWrapper>
+      <LeftSidebar></LeftSidebar>
+      {children}
+      <RightSidebar></RightSidebar>
+    </LayoutWrapper>
   )
 }
 
