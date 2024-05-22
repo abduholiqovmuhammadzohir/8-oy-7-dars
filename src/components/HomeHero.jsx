@@ -1,9 +1,10 @@
-    import React from 'react'
-    
-    function HomeHero() {
-      return (
+import React from 'react'
+
+function HomeHero() {
+
+    return (
         <div>HomeHero</div>
-      )
-    }
-    
-    export default HomeHero
+    )
+}
+
+export default HomeHero

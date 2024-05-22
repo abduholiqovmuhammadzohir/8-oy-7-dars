@@ -1,12 +1,28 @@
+import React, {useEffect} from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Likes from './pages/Likes'
 import Musics from './pages/Musics'
 import Nopages from './pages/Nopages'
 import Layout from './layouts/Layout'
+import { getToken } from './components/utils'
+import {useDispatch} from "react-redux"
+import { create } from './redux/authSlice'
 
 function App() {
-  return (
+  const dispatch = useDispatch();
+  useEffect (() => {
+    getToken()
+    .then(res => {
+      console.log(16,res);
+      dispatch(create(res))
+    })
+    .catch(err => {
+      console.log(err);
+    })
+  },[])
+
+  return (  
     <div>
       <Routes>
         <Route path='/' element={<Layout><Home></Home></Layout>}></Route>
